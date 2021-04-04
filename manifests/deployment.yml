@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dimpy-d206"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dimpy-d206"
+  template:
+    metadata:
+      labels:
+        app: "dimpy-d206"
+    spec:
+      containers:
+        - name: "dimpy-d206"
+          image: "gohelpinghands.azurecr.io/dimpy"
+          ports:
+          - containerPort: 80
